@@ -14,7 +14,7 @@ def message_start(message):
 
 @bot.message.handler(comands=['courses'])
 def message_courses(message):
-    keyboard = telebot.types.InlineKeyboardMarkup(row_widht=1)
+    keyboard = telebot.types.InlineKeyboardMarkup(row_width=1)
 
     with open('courses.txt') as file:
         courses = [item.split(',') for item in file]
@@ -34,7 +34,7 @@ def message_courses(message):
 
 @app.route('/'+ TOKEN, methods=['POST'])
 def get_message():
-    bot.process_new_updates([telebot.types.Update.de.json(request.stream.read().decode("uft-8"))])
+    bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("uft-8"))])
     return "Python Telegram Bot", 200
 
 

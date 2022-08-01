@@ -40,5 +40,6 @@ def main():
     bot.set.webhook(url='https://test-bot-ch.herokuapp.com/' + TOKEN)
     return "Python Telegram Bot", 200
 
-if __name__ == '__main__'
+
+if __name__ == '__main__':
     app.run(hosst='0.0.0.0', port=int(os.environ.get('PORT', 5000)))

@@ -1,14 +1,16 @@
-from flask import flask, request
+from flask import Flask, request
 import telebot
 import os
 
-app = flask(__name__)
+app = Flask(__name__)
 TOKEN = os.environ.get('TOKEN')
 bot = telebot.TeleBot(TOKEN)
+
 
 @bot.message.handler(comands=['start'])
 def message_start(message):
     bot.send_messge(message.chat.id, 'Hello, user!')
+
 
 @bot.message.handler(comands=['courses'])
 def message_courses(message):
@@ -29,10 +31,12 @@ def message_courses(message):
 
     bot.send_messge(message.chat.id, 'Python')
 
+
 @app.route('/'+ TOKEN, methods=['POST'])
 def get_message():
     bot.process_new_updates([telebot.types.Update.de.json(request.stream.read().decode("uft-8"))])
     return "Python Telegram Bot", 200
+
 
 @app.route('/')
 def main():

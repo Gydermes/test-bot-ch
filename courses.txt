@@ -1,5 +1,0 @@
-Inetball, http://www.inetball.ru/default.asp
-Dynamo,  http://dynamo.kiev.ua/
-UA,  https://football.ua/
-Gismeteo, https://www.gismeteo.ua/weather-chuhuiv-12830/weekly/
-Korrespondent, https://ua.korrespondent.net/

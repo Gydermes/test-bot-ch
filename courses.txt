@@ -1,5 +1,5 @@
-Front-End, https://prog.kiev.ua/fe.html
-Web Design, https://prog.kiev.ua/wd.html
-Python, https://prog.kiev.ua/python/
-Java, https://prog.kiev.ua/java.html
-QA, https://prog.kiev.ua/qa.html
+Inetball, http://www.inetball.ru/default.asp
+Dynamo,  http://dynamo.kiev.ua/
+UA,  https://football.ua/
+Gismeteo, https://www.gismeteo.ua/weather-chuhuiv-12830/weekly/
+Korrespondent, https://ua.korrespondent.net/

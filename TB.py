@@ -32,7 +32,7 @@ def message_courses(message):
     bot.send_message(message.chat.id, 'Python')
 
 
-@app.route('/'+ TOKEN, methods=['POST'])
+@app.route('/' + TOKEN, methods=['POST'])
 def get_message():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("uft-8"))])
     return "Python Telegram Bot", 200

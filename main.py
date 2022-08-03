@@ -1,8 +1,6 @@
 from flask import Flask, request
 import telebot
-from telebot import types
 import os
-import config
 
 
 app = Flask(__name__)
@@ -11,15 +9,8 @@ bot = telebot.TeleBot(TOKEN)
 
 
 @bot.message_handler(commands=['start'])
-def start(message):
-    btn1 = types.KeyboardButton("👋 Поздороваться")
-    btn2 = types.KeyboardButton("❓ Задать вопрос")
-    markup.add(btn1, btn2)
-    bot.send_message(message.chat.id,
-                     text="Привет, {0.first_name}! Я тестовый бот Gydermesa".format(message.from_user),
-                     reply_markup=markup)
-
-
+def message_start(message):
+    bot.send_message(message.chat.id, text='Привет, {0.first_name}! Я тестовый бот Gydermesa')
 
 @bot.message_handler(commands=['List'])
 def message_courses(message):
@@ -33,6 +24,10 @@ def message_courses(message):
             keyboard.add(url_button)
 
         bot.send_message(message.chat.id, 'List of saits', reply_markup=keyboard)
+
+@bot.message_handler(func=lambda x: x.text.lower().startswith('python'))
+def message_text(message):
+    bot.send_message(message.chat.id, 'Python')
 
 
 @app.route('/' + TOKEN, methods=['POST'])

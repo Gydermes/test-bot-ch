@@ -30,9 +30,9 @@ def func(message):
         back = types.KeyboardButton("Вернуться в главное меню")
         markup.add(back)
     elif message.text == "Football UA":
-        bot.send_message(message.chat.id, "https://football.ua/", reply_markup=markup)
         back = types.KeyboardButton("Вернуться в главное меню")
         markup.add(back)
+        bot.send_message(message.chat.id, "https://football.ua/", reply_markup=markup)
 
     elif message.text == "Корреспондент":
         bot.send_message(message.chat.id, "https://ua.korrespondent.net/", reply_markup=markup)
@@ -45,7 +45,7 @@ def func(message):
         markup.add(back)
 
     elif message.text == "не нажимай":
-        button1 = types.KeyboardButton("повторяю не нажимай 😂!")
+        button1 = types.KeyboardButton("👋 повторяю не нажимай 😂!")
         button2 = types.KeyboardButton("👋 назад!")
         markup.add(button1, button2)
         bot.send_message(message.chat.id, text="ти серьезно???", reply_markup=markup)
@@ -53,6 +53,9 @@ def func(message):
         button1 = types.KeyboardButton("👋 назад")
         markup.add(button1)
         bot.send_message(message.chat.id, text="ЗАБЛОКИРОВАН 😂😂😂😂😂😂😂😂😂😂💋 !!!", reply_markup=markup)
+
+
+
     else:
         bot.send_message(message.chat.id, text="На такую комманду я не запрограммировал..")
 

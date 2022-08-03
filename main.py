@@ -29,24 +29,23 @@ def func(message):
         markup.add(btn1, btn2, back)
         bot.send_message(message.chat.id, text="Задай мне вопрос", reply_markup=markup)
 
+    elif message.text == "Как меня зовут?":
+        bot.send_message(message.chat.id, "У меня нет имени..")
 
-@bot.message_handler(commands=['List'])
-def message_courses(message):
-    keyboard = telebot.types.InlineKeyboardMarkup(row_width=1)
+    elif message.text == "Что я могу?":
+        bot.send_message(message.chat.id, text="Поздороваться с читателями")
 
-    with open('courses.txt') as file:
-        courses = [item.split(',') for item in file]
+    elif message.text == "Вернуться в главное меню":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        button1 = types.KeyboardButton("👋 Поздороваться")
+        button2 = types.KeyboardButton("❓ Задать вопрос")
+        markup.add(button1, button2)
+        bot.send_message(message.chat.id, text="Вы вернулись в главное меню", reply_markup=markup)
+    else:
+        bot.send_message(message.chat.id, text="На такую комманду я не запрограммировал..")
 
-        for title, link in courses:
-            url_button = telebot.types.InlineKeyboardButton(text=title.strip(), url=link.strip())
-            keyboard.add(url_button)
 
-        bot.send_message(message.chat.id, 'List of saits', reply_markup=keyboard)
-
-
-@bot.message_handler(func=lambda x: x.text.lower().startswith('python'))
-def message_text(message):
-    bot.send_message(message.chat.id, 'Python')
+bot.polling(none_stop=True)
 
 
 @app.route('/' + TOKEN, methods=['POST'])

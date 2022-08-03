@@ -45,7 +45,7 @@ def func(message):
         markup.add(back)
 
     elif message.text == "не нажимай":
-        button1 = types.KeyboardButton("повторяю не нажимай)!")
+        button1 = types.KeyboardButton("повторяю не нажимай 😂!")
         button2 = types.KeyboardButton("👋 назад!")
         markup.add(button1, button2)
         bot.send_message(message.chat.id, text="ти серьезно???", reply_markup=markup)

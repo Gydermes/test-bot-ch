@@ -40,8 +40,8 @@ def get_message():
 
 @app.route('/')
 def main():
-    bot.remove.webhook()
-    bot.set.webhook(url='https://test-bot-ch.herokuapp.com/' + TOKEN)
+    bot.remove_webhook()
+    bot.set_webhook(url='https://test-bot-ch.herokuapp.com/' + TOKEN)
     return "Python Telegram Bot", 200
 
 

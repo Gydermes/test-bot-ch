@@ -1,5 +1,6 @@
 from flask import Flask, request
 import telebot
+import types
 import os
 
 app = Flask(__name__)
@@ -14,7 +15,7 @@ def start(message):
     btn2 = types.KeyboardButton("❓ Задать вопрос")
     markup.add(btn1, btn2)
     bot.send_message(message.chat.id,
-                     "Привет, {0.first_name}! Я тестовый бот Gydermesa".format(message.from_user),
+                     text="Привет, {0.first_name}! Я тестовый бот Gydermesa".format(message.from_user),
                      reply_markup=markup)
 
 

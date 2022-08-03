@@ -49,7 +49,7 @@ def func(message):
         markup.add(button1)
         bot.send_message(message.chat.id, text="ти серьезно???", reply_markup=markup)
     elif message.text == "👋 повторяю не нажимай)!":
-        bot.send_message(message.chat.id, text="ЗАБЛОКИРОВАН!!!", reply_markup=markup)
+        bot.send_message(message.chat.id, text="ЗАБЛОКИРОВАН 😂😂😂😂😂😂😂😂😂😂😂 !!!", reply_markup=markup)
     else:
         bot.send_message(message.chat.id, text="На такую комманду я не запрограммировал..")
 

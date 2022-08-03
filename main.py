@@ -12,7 +12,7 @@ bot = telebot.TeleBot(TOKEN)
 def message_start(message):
     bot.send_message(message.chat.id, 'Hello, user!')
 
-@bot.message_handler(commands=['Мой сайт'])
+@bot.message_handler(commands=['courses'])
 def message_courses(message):
     keyboard = telebot.types.InlineKeyboardMarkup(row_width=1)
 
@@ -23,7 +23,7 @@ def message_courses(message):
             url_button = telebot.types.InlineKeyboardButton(text=title.strip(), url=link.strip())
             keyboard.add(url_button)
 
-        bot.send_message(message.chat.id, 'Мой сайт', reply_markup=keyboard)
+        bot.send_message(message.chat.id, 'List of saits', reply_markup=keyboard)
 
 @bot.message_handler(func=lambda x: x.text.lower().startswith('python'))
 def message_text(message):
@@ -39,7 +39,7 @@ def get_message():
 @app.route('/')
 def main():
     bot.remove_webhook()
-    bot.set_webhook(url='https://test-bot-june.herokuapp.com/' + TOKEN)
+    bot.set_webhook(url='https://dashboard.heroku.com/apps/test-bot-che' + TOKEN)
     return 'Python Telegram Bot', 200
 
 

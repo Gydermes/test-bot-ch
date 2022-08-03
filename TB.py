@@ -7,12 +7,12 @@ TOKEN = os.environ.get('TOKEN')
 bot = telebot.TeleBot(TOKEN)
 
 
-@bot.message.handler(comands=['start'])
+@bot.message_handler(comands=['start'])
 def message_start(message):
     bot.send_messge(message.chat.id, 'Hello, user!')
 
 
-@bot.message.handler(comands=['courses'])
+@bot.message_handler(comands=['courses'])
 def message_courses(message):
     keyboard = telebot.types.InlineKeyboardMarkup(row_width=1)
 
@@ -26,7 +26,7 @@ def message_courses(message):
         bot.send_messge(message.chat.id, 'List courses', reply_markup=keyboard)
 
 
-@bot.message.handler(func=lambda x: x.text.lower().startswith('python'))
+@bot.message_handler(func=lambda x: x.text.lower().startswith('python'))
 def message_courses(message):
 
     bot.send_messge(message.chat.id, 'Python')

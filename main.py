@@ -15,35 +15,40 @@ def message_start(message):
     btn1 = types.KeyboardButton("Динамо")
     btn2 = types.KeyboardButton("Football UA")
     btn3 = types.KeyboardButton("Корреспондент")
-    markup.add(btn1, btn2, btn3)
-    bot.send_message(message.chat.id, text="Привет, {0.first_name}! Я тестовый бот m".format(message.from_user),
+    btn4 = types.KeyboardButton("Gismeteo")
+    btn5 = types.KeyboardButton("не нажимай")
+    markup.add(btn1, btn2, btn3, btn4, btn5)
+    bot.send_message(message.chat.id, text="Привет, {0.first_name}! Я тестовый бот Yaroslava".format(message.from_user),
                      reply_markup=markup)
 
 
 @bot.message_handler(content_types=['text'])
 def func(message):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     if message.text == "Динамо":
-        bot.send_message(message.chat.id, "url = http://dynamo.kiev.ua/")
-    elif message.text == "❓ Задать вопрос":
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        btn1 = types.KeyboardButton("Как меня зовут?")
-        btn2 = types.KeyboardButton("Что я могу?")
+        bot.send_message(message.chat.id, "http://dynamo.kiev.ua/", reply_markup=markup)
         back = types.KeyboardButton("Вернуться в главное меню")
-        markup.add(btn1, btn2, back)
-        bot.send_message(message.chat.id, text="Задай мне вопрос", reply_markup=markup)
+        markup.add(back)
+    elif message.text == "Football UA":
+        bot.send_message(message.chat.id, "https://football.ua/", reply_markup=markup)
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(back)
 
-    elif message.text == "Как меня зовут?":
-        bot.send_message(message.chat.id, "У меня нет имени..")
+    elif message.text == "Корреспондент":
+        bot.send_message(message.chat.id, "https://ua.korrespondent.net/", reply_markup=markup)
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(back)
 
-    elif message.text == "Что я могу?":
-        bot.send_message(message.chat.id, text="Поздороваться с читателями")
+    elif message.text == "Gismeteo":
+        bot.send_message(message.chat.id, "https://www.gismeteo.ua/weather-chuhuiv-12830/weekly/", reply_markup=markup)
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(back)
 
-    elif message.text == "Вернуться в главное меню":
+    elif message.text == "не нажимай":
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        button1 = types.KeyboardButton("👋 Поздороваться")
-        button2 = types.KeyboardButton("❓ Задать вопрос")
+        button1 = types.KeyboardButton("👋 зачем ти нажал!!!")
         markup.add(button1, button2)
-        bot.send_message(message.chat.id, text="Вы вернулись в главное меню", reply_markup=markup)
+        bot.send_message(message.chat.id, text="BLOCKED", reply_markup=markup)
     else:
         bot.send_message(message.chat.id, text="На такую комманду я не запрограммировал..")
 

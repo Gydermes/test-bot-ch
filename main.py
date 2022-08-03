@@ -45,10 +45,11 @@ def func(message):
         markup.add(back)
 
     elif message.text == "не нажимай":
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        button1 = types.KeyboardButton("👋 зачем ти нажал!!!")
+        button1 = types.KeyboardButton("👋 повторяю не нажимай)!")
         markup.add(button1)
-        bot.send_message(message.chat.id, text="BLOCKED", reply_markup=markup)
+        bot.send_message(message.chat.id, text="ти серьезно???", reply_markup=markup)
+        if message.text == "👋 повторяю не нажимай)!":
+            bot.send_message(message.chat.id, text="ЗАБЛОКИРОВАН!!!", reply_markup=markup)
     else:
         bot.send_message(message.chat.id, text="На такую комманду я не запрограммировал..")
 

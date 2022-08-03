@@ -9,7 +9,7 @@ bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(comands=['start'])
 def message_start(message):
-    bot.send_messge(message.chat.id, 'Hello, user!')
+    bot.send_message(message.chat.id, 'Hello, user!')
 
 
 @bot.message_handler(comands=['courses'])
@@ -23,13 +23,13 @@ def message_courses(message):
             url_button = telebot.types.InlineKeyboardButton(text=title.strip(), url=link.strip())
             keyboard.add(url_button)
 
-        bot.send_messge(message.chat.id, 'List courses', reply_markup=keyboard)
+        bot.send_message(message.chat.id, 'List courses', reply_markup=keyboard)
 
 
 @bot.message_handler(func=lambda x: x.text.lower().startswith('python'))
 def message_courses(message):
 
-    bot.send_messge(message.chat.id, 'Python')
+    bot.send_message(message.chat.id, 'Python')
 
 
 @app.route('/'+ TOKEN, methods=['POST'])

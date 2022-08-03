@@ -54,8 +54,8 @@ def func(message):
         button1 = types.KeyboardButton("👋ну рискни еще раз 😂!")
         back = types.KeyboardButton("Вернуться в главное меню")
         markup.add(button1, back)
-        bot.send_message(message.chat.id, text="ти серьезно???", reply_markup=markup)
-    elif message.text == "ну рискни еще раз 😂!":
+        bot.send_message(message.chat.id, text="впертий?", reply_markup=markup)
+    elif message.text == "👋ну рискни еще раз 😂!":
         back = types.KeyboardButton("Вернуться в главное меню")
         markup.add(back)
         bot.send_message(message.chat.id, text="ЗАБЛОКИРОВАН 😂😂😂😂😂😂😂😂😂😂💋 !!!", reply_markup=markup)
@@ -68,6 +68,7 @@ def func(message):
         btn4 = types.KeyboardButton("Gismeteo")
         btn5 = types.KeyboardButton("не нажимай")
         markup.add(btn1, btn2, btn3, btn4, btn5)
+        bot.send_message(message.chat.id, text="Вы вернулись в главное меню", reply_markup=markup)
 
     else:
         bot.send_message(message.chat.id, text="На такую комманду я не запрограммировал..")

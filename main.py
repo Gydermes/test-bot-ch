@@ -1,7 +1,6 @@
 from flask import Flask, request
 import telebot
 import os
-import config
 from telebot import types
 
 

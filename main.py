@@ -12,7 +12,7 @@ bot = telebot.TeleBot(TOKEN)
 def message_start(message):
     bot.send_message(message.chat.id, 'Hello, user!')
 
-@bot.message_handler(commands=['courses'])
+@bot.message_handler(commands=['List'])
 def message_courses(message):
     keyboard = telebot.types.InlineKeyboardMarkup(row_width=1)
 

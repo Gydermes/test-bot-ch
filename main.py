@@ -2,6 +2,8 @@ from flask import Flask, request
 import telebot
 from telebot import types
 import os
+import config
+
 
 app = Flask(__name__)
 TOKEN = os.environ.get('TOKEN')

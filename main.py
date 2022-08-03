@@ -10,7 +10,10 @@ bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
 def message_start(message):
-    bot.send_message(message.chat.id, text='Привет, {0.first_name}! Я тестовый бот Gydermesa')
+    bot.send_message(message.chat.id, text='Привет, {0.first_name}! Я тестовый бот Gydermesa'.format(message.from_user),
+                     reply_markup=markup)
+    bot.polling(none_stop=True)
+
 
 @bot.message_handler(commands=['List'])
 def message_courses(message):

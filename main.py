@@ -28,7 +28,9 @@ def func(message):
     if message.text == "Динамо":
         back = types.KeyboardButton("Вернуться в главное меню")
         markup.add(back)
-        sti = open('photo_2022-08-05_00-17-02.jpg', 'rb')
+        stq = open('photo_2022-08-05_00-17-02.jpg', 'rb')
+        bot.send_sticker(message.chat.id, stq)
+        sti = open("https://dynamo.kiev.ua/media/posts/2022/08/04/luchesku16.jpg", 'rb')
         bot.send_sticker(message.chat.id, sti)
         bot.send_message(message.chat.id, "https://dynamo.kiev.ua/media/posts/2022/08/04/luchesku16.jpg",
                          reply_markup=markup)

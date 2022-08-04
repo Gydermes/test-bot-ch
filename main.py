@@ -28,7 +28,8 @@ def func(message):
     if message.text == "Динамо":
         back = types.KeyboardButton("Вернуться в главное меню")
         markup.add(back)
-        bot.send_message(message.chat.id, "http://dynamo.kiev.ua/", reply_markup=markup)
+        bot.send_message(message.chat.id, "http://dynamo.kiev.ua/", "https://www.instagram.com/p/Bq7gXaDBKfQ/",
+                         reply_markup=markup)
 
     elif message.text == "Football UA":
         back = types.KeyboardButton("Вернуться в главное меню")
@@ -60,7 +61,7 @@ def func(message):
         markup.add(back)
         bot.send_message(message.chat.id, text="ЗАБЛОКИРОВАН 😂😂😂😂😂😂😂😂😂😂💋 !!!", reply_markup=markup)
 
-    elif (message.text == "Вернуться в главное меню"):
+    elif message.text == "Вернуться в главное меню":
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton("Динамо")
         btn2 = types.KeyboardButton("Football UA")
@@ -72,9 +73,6 @@ def func(message):
 
     else:
         bot.send_message(message.chat.id, text="На такую комманду я не запрограммировал..")
-
-
-
 
 
 @app.route('/' + TOKEN, methods=['POST'])

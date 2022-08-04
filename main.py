@@ -28,8 +28,9 @@ def func(message):
     if message.text == "Динамо":
         back = types.KeyboardButton("Вернуться в главное меню")
         markup.add(back)
-        sti = open('IMG_8042.JPG', 'rb')
+        sti = open('photo_2022-08-05_00-17-02.jpg', 'rb')
         bot.send_sticker(message.chat.id, sti)
+        bot.send_message(message.chat.id, "http://dynamo.kiev.ua/", reply_markup=markup)
 
     elif message.text == "Football UA":
         back = types.KeyboardButton("Вернуться в главное меню")

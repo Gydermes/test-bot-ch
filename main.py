@@ -28,7 +28,7 @@ def func(message):
     if message.text == "Динамо":
         back = types.KeyboardButton("Вернуться в главное меню")
         markup.add(back)
-        bot.send_message(message.chat.id, "http://dynamo.kiev.ua/", "https://www.instagram.com/p/Bq7gXaDBKfQ/",
+        bot.send_message(message.chat.id, "https://www.instagram.com/p/Bq7gXaDBKfQ/",
                          reply_markup=markup)
 
     elif message.text == "Football UA":
